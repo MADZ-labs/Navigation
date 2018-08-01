@@ -2,8 +2,9 @@
   "name": "navigation",
   "version": "1.0.0",
   "description": "Navigation-Component Similar to one found on a popular crowdfunding site.",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
+    "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/MADZ-labs/Navigation#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "log": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
