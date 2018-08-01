@@ -1,17 +1,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Log = require('Log');
+const path = require('path');
+const port = 3005;
+let app = express();
 
-const app = new express();
-const log = new Log('info');
-const port = process.env.PORT || 3005;
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true,
+  extended: false
 }));
 
-app.listen(port, () => {
-  log.info(`Listening on http://localhost:${port}`);
-});
 
+app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
+})
+
+app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
